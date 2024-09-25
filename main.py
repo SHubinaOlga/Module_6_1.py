@@ -5,13 +5,14 @@ class Animal:
 
     def __init__(self, name): #, alive, fed):
         self.name = name  #индивидуальное название каждого животного
+
 class Plant:
     edible = False #(съедобность)
+    
     def __init__(self, edible, food_name, food):
         self.edible = edible
         self.food_name = food_name
-        #self.food = food
-
+       
 class Mammal(Animal, Plant):
     food_name = []
     name = []
@@ -22,8 +23,8 @@ class Mammal(Animal, Plant):
         else:
             print(f'{self.name} не стал есть {food.name}')
         self.fed = True
-class  Predator(Animal, Plant):
 
+class  Predator(Animal, Plant):
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
